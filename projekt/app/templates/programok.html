@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block cim %}
+Programok
+{% endblock %}
+
+{% block tartalom %}
+{% load static %}
+<table class="table table-striped">
+    <tr>
+        <th>Kép</th>
+        <th>Ország</th>
+        <th>Város</th>
+        <th>Látnivaló</th>
+        <th>Időpont</th>
+        <th>Ár</th>
+        <th>Leírás</th>
+    </tr>
+    {% for program in programok %}
+    <tr>
+        <td><img src="{% static program.kep %}" alt="{{program.latnivalo}}" width="150"></td>
+        <td>{{program.orszag}}</td>
+        <td>{{program.varos}}</td>
+        <td>{{program.latnivalo}}</td>
+        <td>{{program.idopont}}</td>
+        <td>{{program.ar}} Ft</td>
+        <td>{{program.leiras}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

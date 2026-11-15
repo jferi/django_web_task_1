@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8" />
+    <title>UtazzNézd</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+<h1 class="text-success d-flex justify-content-center">
+{% block cim %}
+UtazzNézd
+{% endblock %}
+</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 bg-light">
+            <div class="list-group">
+                <a href="{% url 'index' %}">Rólunk</a>
+                <a href="{% url 'programok' %}">Programok</a>
+                <a href="{% url 'velemenyek' %}">Vélemények</a>
+                <a href="{% url 'kapcsolat' %}">Kapcsolat</a>
+            </div>
+        </div>
+        <div class="col-md-9">
+            {% block tartalom %}
+            {% endblock %}
+        </div>
+    </div>
+    <hr>
+    <div class="text-success d-flex justify-content-center">
+        UtazzNézd 2026
+    </div>
+</div>
+</body>
+</html>

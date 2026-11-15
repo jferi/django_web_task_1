@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block cim %}
+UtazzNézd
+{% endblock %}
+
+{% block tartalom %}
+<h3>Rólunk</h3>
+<p>Az UtazzNézd egy budapesti utazási cég. Városnéző programokat és belépőket kínálunk Európa legszebb városaiba.</p>
+<p>Minden programunkat helyi idegenvezető vezeti, a belépőjegy pedig benne van az árban, így nem kell sorban állni.</p>
+<p>Válasszon a programjaink közül, és ha már utazott velünk, írja meg a véleményét!</p>
+<a class="btn btn-success" href="{% url 'programok' %}">Programok megtekintése</a>
+{% endblock %}

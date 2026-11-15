@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block cim %}
+Vélemények
+{% endblock %}
+
+{% block tartalom %}
+<h3>Írja meg a véleményét!</h3>
+<form method="post" action="{% url 'velemenyek' %}">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="btn btn-success">Küldés</button>
+</form>
+<hr>
+<h3>Korábbi vélemények</h3>
+<table class="table table-striped">
+    <tr>
+        <th>Név</th>
+        <th>Vélemény</th>
+    </tr>
+    {% for velemeny in velemenyek %}
+    <tr>
+        <td>{{velemeny.nev}}</td>
+        <td>{{velemeny.szoveg}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
